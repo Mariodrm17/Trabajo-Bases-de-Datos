@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-04-2024 a las 14:58:43
--- Versión del servidor: 8.2.0
+-- Tiempo de generación: 03-04-2024 a las 16:24:34
+-- Versión del servidor: 8.0.35
 -- Versión de PHP: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `areas`;
 CREATE TABLE IF NOT EXISTS `areas` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
+  `nombre` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `descripcion` text,
   `fecha_apertura` date DEFAULT NULL,
-  `ubicacion` varchar(100) DEFAULT NULL,
+  `ubicacion` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `fecha_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -43,10 +43,10 @@ CREATE TABLE IF NOT EXISTS `areas` (
 --
 
 INSERT INTO `areas` (`id`, `nombre`, `descripcion`, `fecha_apertura`, `ubicacion`, `fecha_registro`) VALUES
-(1, 'Mediterrània', 'Área temática inspirada en el Mediterráneo y sus culturas.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33'),
+(1, 'Mediterráneo', 'Área temática inspirada en el Mediterráneo y sus culturas.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33'),
 (2, 'China', 'Área temática inspirada en la China antigua y su cultura.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33'),
 (3, 'México', 'Área temática inspirada en la cultura y arquitectura mexicana.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33'),
-(4, 'Polynesia', 'Área temática inspirada en las islas del Pacífico y su cultura.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33');
+(4, 'Polinesia', 'Área temática inspirada en las islas del Pacífico y su cultura.', '1995-04-02', 'PortAventura World', '2024-04-03 14:57:33');
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,7 @@ INSERT INTO `areas` (`id`, `nombre`, `descripcion`, `fecha_apertura`, `ubicacion
 DROP TABLE IF EXISTS `atracciones`;
 CREATE TABLE IF NOT EXISTS `atracciones` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
+  `nombre` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `altura_minima` decimal(5,2) DEFAULT NULL,
   `descripcion` text,
@@ -75,11 +75,11 @@ CREATE TABLE IF NOT EXISTS `atracciones` (
 --
 
 INSERT INTO `atracciones` (`id`, `nombre`, `tipo`, `altura_minima`, `descripcion`, `fecha_apertura`, `tiempo_espera_promedio`, `ubicacion`, `capacidad`, `estado`, `fecha_registro`) VALUES
-(1, 'Shambhala', 'Montaña Rusa', '1.40', 'Montaña rusa de tipo hypercoaster con una altura máxima de 76 metros y una velocidad máxima de 134 km/h.', '2012-05-12', 45, 'Mediterrània', 32, 'Operativa', '2024-04-03 14:57:33'),
-(2, 'Furius Baco', 'Montaña Rusa', '1.40', 'Montaña rusa lanzada que alcanza una velocidad máxima de 135 km/h en 3 segundos.', '2007-06-05', 30, 'Mediterrània', 20, 'Operativa', '2024-04-03 14:57:33'),
+(1, 'Shambhala', 'Montaña Rusa', '1.40', 'Montaña rusa de tipo hypercoaster con una altura máxima de 76 metros y una velocidad máxima de 134 km/h.', '2012-05-12', 45, 'Mediterranea', 32, 'Operativa', '2024-04-03 14:57:33'),
+(2, 'Furius Baco', 'Montaña Rusa', '1.40', 'Montaña rusa lanzada que alcanza una velocidad máxima de 135 km/h en 3 segundos.', '2007-06-05', 30, 'Mediterranea', 20, 'Operativa', '2024-04-03 14:57:33'),
 (3, 'Dragon Khan', 'Montaña Rusa', '1.40', 'Montaña rusa con ocho inversiones y una altura máxima de 45 metros.', '1995-04-02', 40, 'China', 28, 'Operativa', '2024-04-03 14:57:33'),
 (4, 'Red Force', 'Acelerador Vertical', '1.40', 'Acelerador vertical con una altura máxima de 112 metros y una velocidad máxima de 180 km/h.', '2017-04-07', 60, 'México', 16, 'Operativa', '2024-04-03 14:57:33'),
-(5, 'Tutuki Splash', 'Rápidos', '1.00', 'Atracción de rápidos con una caída de 15 metros.', '1995-04-02', 25, 'Polynesia', 24, 'Operativa', '2024-04-03 14:57:33');
+(5, 'Tutuki Splash', 'Rápidos', '1.00', 'Atracción de rápidos con una caída de 15 metros.', '1995-04-02', 25, 'Polinesia', 24, 'Operativa', '2024-04-03 14:57:33');
 
 -- --------------------------------------------------------
 
@@ -90,10 +90,10 @@ INSERT INTO `atracciones` (`id`, `nombre`, `tipo`, `altura_minima`, `descripcion
 DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE IF NOT EXISTS `empleados` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
+  `nombre` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `apellido` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `puesto` varchar(100) NOT NULL,
-  `area_trabajo` varchar(100) DEFAULT NULL,
+  `area_trabajo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `fecha_contratacion` date DEFAULT NULL,
   `salario` decimal(10,2) DEFAULT NULL,
   `estado` enum('Activo','Inactivo') DEFAULT 'Activo',
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `nombre`, `apellido`, `puesto`, `area_trabajo`, `fecha_contratacion`, `salario`, `estado`, `fecha_registro`) VALUES
-(1, 'Juan', 'Martinez', 'Operador de atracciones', 'Mediterrània', '2010-03-15', '1800.00', 'Activo', '2024-04-03 14:57:33'),
+(1, 'Juan', 'Martinez', 'Operador de atracciones', 'Mediterranea', '2010-03-15', '1800.00', 'Activo', '2024-04-03 14:57:33'),
 (2, 'María', 'González', 'Técnico de mantenimiento', 'México', '2015-08-20', '2200.00', 'Activo', '2024-04-03 14:57:33'),
 (3, 'Carlos', 'López', 'Guía de espectáculos', 'China', '2018-05-10', '2000.00', 'Activo', '2024-04-03 14:57:33'),
 (4, 'Ana', 'Rodríguez', 'Cajero de tienda', 'Polynesia', '2020-01-30', '1600.00', 'Activo', '2024-04-03 14:57:33');
