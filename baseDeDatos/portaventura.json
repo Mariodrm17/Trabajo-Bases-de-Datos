@@ -1,5 +1,5 @@
 {
-    "areas"; [
+    "areas": [
       {
         "id": 1,
         "nombre": "Mediterráneo",
@@ -21,7 +21,7 @@
         "nombre": "México",
         "descripcion": "Área temática inspirada en la cultura y arquitectura mexicana.",
         "fecha_apertura": "1995-04-02",
-        "ubicacion": "PortAventura World",
+        "ubicacion": "PortAventura World"
         
       },
       {
@@ -29,11 +29,11 @@
         "nombre": "Polinesia",
         "descripcion": "Área temática inspirada en las islas del Pacífico y su cultura.",
         "fecha_apertura": "1995-04-02",
-        "ubicacion": "PortAventura World",
+        "ubicacion": "PortAventura World"
         
       }
     ],
-    "atracciones"; [
+    "atracciones": [
       {
         "id": 1,
         "nombre": "Shambhala",
@@ -44,7 +44,7 @@
         "tiempo_espera_promedio": 45,
         "ubicacion": "Mediterranea",
         "capacidad": 32,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 2,
@@ -56,7 +56,7 @@
         "tiempo_espera_promedio": 30,
         "ubicacion": "Mediterranea",
         "capacidad": 20,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 3,
@@ -68,7 +68,7 @@
         "tiempo_espera_promedio": 40,
         "ubicacion": "China",
         "capacidad": 28,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 4,
@@ -80,7 +80,7 @@
         "tiempo_espera_promedio": 60,
         "ubicacion": "México",
         "capacidad": 16,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 5,
@@ -92,7 +92,7 @@
         "tiempo_espera_promedio": 25,
         "ubicacion": "Polinesia",
         "capacidad": 24,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 6,
@@ -104,7 +104,7 @@
         "tiempo_espera_promedio": 40,
         "ubicacion": "México",
         "capacidad": 20,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 7,
@@ -116,7 +116,7 @@
         "tiempo_espera_promedio": 35,
         "ubicacion": "Mediterranea",
         "capacidad": 36,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 8,
@@ -128,7 +128,7 @@
         "tiempo_espera_promedio": 30,
         "ubicacion": "Polinesia",
         "capacidad": 30,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 9,
@@ -140,7 +140,7 @@
         "tiempo_espera_promedio": 50,
         "ubicacion": "China",
         "capacidad": 24,
-        "estado": "Operativa",
+        "estado": "Operativa"
       },
       {
         "id": 10,
@@ -152,10 +152,10 @@
         "tiempo_espera_promedio": 45,
         "ubicacion": "Mediterranea",
         "capacidad": 16,
-        "estado": "Operativa",
+        "estado": "Operativa"
       }
     ],
-    "empleados"; [
+    "empleados": [
       {
         "id": 1,
         "nombre": "Juan",
@@ -267,7 +267,7 @@
         "fecha_registro": "2024-04-03 14:57:33"
       }
     ],
-    "visitantes"; [
+    "visitantes": [
       {
         "id": 1,
         "nombre": "Raul",
@@ -379,7 +379,7 @@
         "fecha_registro": "2024-04-03 14:57:33"
       }
     ],
-    "visitas"; [
+    "visitas": [
       {
         "id": 1,
         "id_visitante": 1,
@@ -451,7 +451,7 @@
         "monto_total": "200.00"
       }
     ],
-    "espectaculos"; [
+    "espectaculos": [
       {
         "nombre": "Fantasía Acuática",
         "descripcion": "Espectáculo de luces y agua con música en vivo.",
@@ -523,7 +523,7 @@
         "ubicacion": "Zona de Picnic"
       }
     ],
-    "restaurantes"; [
+    "restaurantes": [
       {
         "nombre": "La Taberna del Pirata",
         "tipo_cocina": "Mariscos y pescados frescos",
