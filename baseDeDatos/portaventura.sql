@@ -114,12 +114,12 @@ INSERT INTO `empleados` (`id`, `nombre`, `apellido`, `puesto`, `area_trabajo`, `
 (2, 'María', 'González', 'Técnico de mantenimiento', 'México', '2015-08-20', '2200.00', 'Activo', '2024-04-03 14:57:33'),
 (3, 'Carlos', 'López', 'Guía de espectáculos', 'China', '2018-05-10', '2000.00', 'Activo', '2024-04-03 14:57:33'),
 (4, 'Ana', 'Rodríguez', 'Cajero de tienda', 'Polynesia', '2020-01-30', '1600.00', 'Activo', '2024-04-03 14:57:33'),
-(5,'Pedro', 'Sánchez', 'Coordinador de Seguridad', 'Mediterranea', '2012-06-10', '2500.00', 'Activo'),
-(6,'Lucía', 'Martínez', 'Animador Infantil', 'Polynesia', '2013-04-05', '1900.00', 'Activo'),
-(7,'Manuel', 'Díaz', 'Camarero', 'Ristorante Italiano', '2016-09-15', '1800.00', 'Activo'),
-(8,'Elena', 'García', 'Recepcionista', 'Hotel Mediterráneo', '2019-11-20', '2100.00', 'Activo'),
-(9,'David', 'Fernández', 'Monitor de Atracciones', 'México', '2017-07-25', '2000.00', 'Activo'),
-(10,'Sara', 'López', 'Cajero de Restaurante', 'Bistró Francés', '2020-03-10', '1700.00', 'Activo');
+(5,'Pedro', 'Sánchez', 'Coordinador de Seguridad', 'Mediterranea', '2012-06-10', '2500.00', 'Activo', '2024-04-03 14:57:33'),
+(6,'Lucía', 'Martínez', 'Animador Infantil', 'Polynesia', '2013-04-05', '1900.00', 'Activo', '2024-04-03 14:57:33'),
+(7,'Manuel', 'Díaz', 'Camarero', 'Ristorante Italiano', '2016-09-15', '1800.00', 'Activo', '2024-04-03 14:57:33'),
+(8,'Elena', 'García', 'Recepcionista', 'Hotel Mediterráneo', '2019-11-20', '2100.00', 'Activo', '2024-04-03 14:57:33'),
+(9,'David', 'Fernández', 'Monitor de Atracciones', 'México', '2017-07-25', '2000.00', 'Activo', '2024-04-03 14:57:33'),
+(10,'Sara', 'López', 'Cajero de Restaurante', 'Bistró Francés', '2020-03-10', '1700.00', 'Activo', '2024-04-03 14:57:33');
 -- --------------------------------------------------------
 
 --
