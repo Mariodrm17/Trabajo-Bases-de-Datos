@@ -78,7 +78,7 @@ INSERT INTO `atracciones` (`id`, `nombre`, `tipo`, `altura_minima`, `descripcion
 (2, 'Furius Baco', 'Montaña Rusa', '1.40', 'Montaña rusa lanzada que alcanza una velocidad máxima de 135 km/h en 3 segundos.', '2007-06-05', 30, 'Mediterranea', 20, 'Operativa'),
 (3, 'Dragon Khan', 'Montaña Rusa', '1.40', 'Montaña rusa con ocho inversiones y una altura máxima de 45 metros.', '1995-04-02', 40, 'China', 28, 'Operativa'),
 (4, 'Red Force', 'Acelerador Vertical', '1.40', 'Acelerador vertical con una altura máxima de 112 metros y una velocidad máxima de 180 km/h.', '2017-04-07', 60, 'México', 16, 'Operativa'),
-(5, 'Tutuki Splash', 'Rápidos', '1.00', 'Atracción de rápidos con una caída de 15 metros.', '1995-04-02', 25, 'Polinesia', 24, 'Operativa');
+(5, 'Tutuki Splash', 'Rápidos', '1.00', 'Atracción de rápidos con una caída de 15 metros.', '1995-04-02', 25, 'Polinesia', 24, 'Operativa'),
 (6,'Hurakan Condor', 'Torre de Caída', '1.40', 'Torre de caída libre de 100 metros de altura.', '2005-06-17', 40, 'México', 20, 'Operativa'),
 (7,'Stampida', 'Montaña Rusa de Madera', '1.20', 'Montaña rusa de madera con dos circuitos paralelos.', '1997-04-12', 35, 'Mediterranea', 36, 'Operativa'),
 (8,'Silver River Flume', 'Rápidos', '1.10', 'Atracción de rápidos con un recorrido acuático a través de un cañón.', '1992-06-20', 30, 'Polinesia', 30, 'Operativa'),
@@ -113,13 +113,13 @@ INSERT INTO `empleados` (`id`, `nombre`, `apellido`, `puesto`, `area_trabajo`, `
 (1, 'Juan', 'Martinez', 'Operador de atracciones', 'Mediterranea', '2010-03-15', '1800.00', 'Activo', '2024-04-03 14:57:33'),
 (2, 'María', 'González', 'Técnico de mantenimiento', 'México', '2015-08-20', '2200.00', 'Activo', '2024-04-03 14:57:33'),
 (3, 'Carlos', 'López', 'Guía de espectáculos', 'China', '2018-05-10', '2000.00', 'Activo', '2024-04-03 14:57:33'),
-(4, 'Ana', 'Rodríguez', 'Cajero de tienda', 'Polynesia', '2020-01-30', '1600.00', 'Activo', '2024-04-03 14:57:33');
-(5,'Pedro', 'Sánchez', 'Coordinador de Seguridad', 'Mediterranea', '2012-06-10', '2500.00', 'Activo'),
-(6,'Lucía', 'Martínez', 'Animador Infantil', 'Polynesia', '2013-04-05', '1900.00', 'Activo'),
-(7,'Manuel', 'Díaz', 'Camarero', 'Ristorante Italiano', '2016-09-15', '1800.00', 'Activo'),
-(8,'Elena', 'García', 'Recepcionista', 'Hotel Mediterráneo', '2019-11-20', '2100.00', 'Activo'),
-(9,'David', 'Fernández', 'Monitor de Atracciones', 'México', '2017-07-25', '2000.00', 'Activo'),
-(10,'Sara', 'López', 'Cajero de Restaurante', 'Bistró Francés', '2020-03-10', '1700.00', 'Activo');
+(4, 'Ana', 'Rodríguez', 'Cajero de tienda', 'Polynesia', '2020-01-30', '1600.00', 'Activo', '2024-04-03 14:57:33'),
+(5,'Pedro', 'Sánchez', 'Coordinador de Seguridad', 'Mediterranea', '2012-06-10', '2500.00', 'Activo', '2024-04-03 14:57:33'),
+(6,'Lucía', 'Martínez', 'Animador Infantil', 'Polynesia', '2013-04-05', '1900.00', 'Activo', '2024-04-03 14:57:33'),
+(7,'Manuel', 'Díaz', 'Camarero', 'Ristorante Italiano', '2016-09-15', '1800.00', 'Activo', '2024-04-03 14:57:33'),
+(8,'Elena', 'García', 'Recepcionista', 'Hotel Mediterráneo', '2019-11-20', '2100.00', 'Activo', '2024-04-03 14:57:33'),
+(9,'David', 'Fernández', 'Monitor de Atracciones', 'México', '2017-07-25', '2000.00', 'Activo', '2024-04-03 14:57:33'),
+(10,'Sara', 'López', 'Cajero de Restaurante', 'Bistró Francés', '2020-03-10', '1700.00', 'Activo', '2024-04-03 14:57:33');
 -- --------------------------------------------------------
 
 --
@@ -148,7 +148,7 @@ INSERT INTO `visitantes` (`id`, `nombre`, `apellido`, `fecha_nacimiento`, `gener
 (1, 'Raul', 'Pelayo', '2004-05-10', 'Masculino', 'Española', 'DNI', '12345678A', '2024-04-03 14:57:33'),
 (2, 'Alvaro', 'Lostal', '2004-08-12', 'Masculino', 'Española', 'DNI', '87654321B', '2024-04-03 14:57:33'),
 (3, 'Mario del Rio', 'Merino', '2004-11-17', 'Masculino', 'Española', 'DNI', '98765432C', '2024-04-03 14:57:33'),
-(4, 'Pablo', 'Cantero', '2004-08-18', 'Masculino', 'Española', 'DNI', '72206059C', '2024-04-03 14:57:33');
+(4, 'Pablo', 'Cantero', '2004-08-18', 'Masculino', 'Española', 'DNI', '72206059C', '2024-04-03 14:57:33'),
 (5,'Laura', 'Sánchez', '2005-02-28', 'Femenino', 'Española', 'DNI', '65432109D', '2024-04-03 14:57:33'),
 (6,'Sofía', 'García', '2004-10-15', 'Femenino', 'Española', 'DNI', '56789012E', '2024-04-03 14:57:33'),
 (7,'Manuel', 'Fernández', '2004-07-22', 'Masculino', 'Española', 'DNI', '90123456F', '2024-04-03 14:57:33'),
@@ -181,9 +181,9 @@ INSERT INTO `visitas` (`id`, `id_visitante`, `fecha_visita`, `cantidad_personas`
 (1, 1, '2023-07-10', 2, '80.00'),
 (2, 2, '2023-08-05', 3, '120.00'),
 (3, 3, '2023-09-15', 1, '40.00'),
-(4, 4, '2023-10-20', 2, '90.00');
-(5, 5'2023-11-12', 4, '160.00'),
-(6, 6'2023-12-25', 2, '100.00'),
+(4, 4, '2023-10-20', 2, '90.00'),
+(5, 5,'2023-11-12', 4, '160.00'),
+(6, 6,'2023-12-25', 2, '100.00'),
 (7, 7,'2024-01-08', 3, '120.00'),
 (8, 8,'2024-02-14', 2, '90.00'),
 (9, 9,'2024-03-20', 1, '40.00'),
