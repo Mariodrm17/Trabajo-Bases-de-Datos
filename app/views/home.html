@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortAventura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff5500;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        a {
+            color: #ff5500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .links {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .links {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .link-item {
+            background-color: #ff5500;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-item:hover {
+            background-color: #cc4400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a PortAventura</h1>
+        <div class="links">
+            <a class="link-item" href="/areas">Nuestras áreas</a>
+            <a class="link-item" href="/atracciones">Nuestras atracciones</a>
+            <a class="link-item" href="/empleados">Nuestros empleados</a>
+            <a class="link-item" href="/visitantes">Nuestros visitantes</a>
+            <a class="link-item" href="/visitas">Nuestras visitas</a>
+            <a class="link-item" href="/espectaculos">Nuestros espectaculos</a>
+            <a class="link-item" href="/restaurantes">Nuestros restaurantes</a>
+        </div>
+    </div>
+</body>
+</html>

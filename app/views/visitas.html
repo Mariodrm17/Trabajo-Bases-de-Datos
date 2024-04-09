@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visitas</title>
+</head>
+
+<body>
+    <h1>Visitas</h1>
+    <ul>
+        <%visitas.forEach(visita=>{%>
+            <li>
+                <h2><%= visita.id %></h2>
+                <p><%= visita.id_visitante %></p>
+                <p><%= visita.fecha_visita %></p>
+                <p><%= visita.cantidad_personas %></p>
+                <p><%= visita.monto_total %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>

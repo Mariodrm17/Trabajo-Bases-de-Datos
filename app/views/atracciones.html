@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atracciones</title>
+</head>
+
+<body>
+    <h1>Atracciones</h1>
+    <ul>
+        <%atracciones.forEach(atraccion=>{%>
+            <li>
+                <h2><%=atraccion.nombre%></h2>
+                <p><%=atraccion.id%></p>
+                <p><%=atraccion.tipo%></p>
+                <p><%=atraccion.altura_minima%></p>
+                <p><%=atraccion.descripcion%></p>
+                <p><%=atraccion.fecha_apertura%></p>
+                <p><%=atraccion.tiempo_espera_promedio%></p>
+                <p><%=atraccion.ubicacion%></p>
+                <p><%=atraccion.capacidad%></p>
+                <p><%=atraccion.estado%></p>
+
+
+            </li>
+
+
+        <%})%>
+
+    </ul>
+
+</body>
+
+</html>
