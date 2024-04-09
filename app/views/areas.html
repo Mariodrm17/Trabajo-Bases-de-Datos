@@ -1,29 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áreas</title>
+    <title>Áreas - PortAventura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff5500;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        li {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 45%; /* Para que se muestren dos elementos por fila */
+            box-sizing: border-box; /* Para incluir el padding y el border en el width */
+        }
+
+        h2 {
+            color: #ff5500;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .area-image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Areas</h1>
-    <ul>
-        <%areas.forEach(area=>{%>
-            <li>
-                <h2><%=area.nombre%></h2>
-                <p><%=area.id%></p>
-                <p><%=area.descripcion%></p>
-                <p><%=area.fecha_apertura%></p>
-                <p><%=area.ubicacion%></p>
-            </li>
-        <%})%>
-
-    </ul>
-
+    <h1>Áreas - PortAventura</h1>
+    <div class="container">
+        <ul>
+            <%areas.forEach(area => {%>
+                <li>
+                    <h2><%=area.nombre%></h2>
+                    <!-- Aquí puedes agregar la imagen de la zona -->
+                    <% if(area.nombre === 'Mediterráneo') { %>
+                        <img src="https://www.pafans.com/static/area/portaventura-park_mediterrania.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
+                    <% } else if(area.nombre === 'China') { %>
+                        <img src="https://www.portaventuraevents.com/wp-content/uploads/2019/06/PortAventura_Park_Banner_4_China.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
+                    <% } else if(area.nombre === 'México') { %>
+                        <img src="https://www.pafans.com/static/area/portaventura-park_mexico.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
+                    <% } else if(area.nombre === 'Polinesia') { %>
+                        <img src="https://www.pafans.com/static/area/portaventura-park_polynesia.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
+                    <% } %>
+                    <p>ID: <%=area.id%></p>
+                    <p>Descripción: <%=area.descripcion%></p>
+                    <p>Fecha de apertura: <%=area.fecha_apertura%></p>
+                    <p>Ubicación: <%=area.ubicacion%></p>
+                </li>
+            <%})%>
+        </ul>
+    </div>
 </body>
-
 </html>
-
-
