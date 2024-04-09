@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortAventura</title>
+    <link rel="icon" type="image/png"
+        href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: #f5f5f5;
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
+        }
+
+        footer {
+            background-color: #ff5500;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
         }
 
         h1 {
@@ -23,6 +51,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            padding-bottom: 80px;
         }
 
         a {
@@ -62,20 +91,217 @@
         .link-item:hover {
             background-color: #cc4400;
         }
+
+        .feature-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            width: 300px;
+            max-width: calc(100% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+        }
+
+
+        .slideshow-container {
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-top: 20px;
+        }
+
+        .slide {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            margin-right: 20px;
+            background-color: #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dropbtn {
+            background-color: #ff5500;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #cc4400;
+        }
+
+        .btn-horarios {
+            background-color: #ff5500;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .btn-horarios:hover {
+            background-color: #cc4400;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+
+        h2 {
+            color: #ff5500;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Bienvenido a PortAventura</h1>
-        <div class="links">
-            <a class="link-item" href="/areas">Nuestras áreas</a>
-            <a class="link-item" href="/atracciones">Nuestras atracciones</a>
-            <a class="link-item" href="/empleados">Nuestros empleados</a>
-            <a class="link-item" href="/visitantes">Nuestros visitantes</a>
-            <a class="link-item" href="/visitas">Nuestras visitas</a>
-            <a class="link-item" href="/espectaculos">Nuestros espectaculos</a>
-            <a class="link-item" href="/restaurantes">Nuestros restaurantes</a>
+        <div class="logo-container">
+            <img src="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png"
+                alt="Logo de PortAventura" class="logo-img">
+        </div>
+        <div class="container">
+            <div class="dropdown">
+                <button class="dropbtn">Ver todo PortAventura Park</button>
+                <div class="dropdown-content">
+                    <a href="/areas">Nuestras áreas</a>
+                    <a href="/atracciones">Nuestras atracciones</a>
+                    <a href="/empleados">Nuestros empleados</a>
+                    <a href="/visitantes">Nuestros visitantes</a>
+                    <a href="/visitas">Nuestras visitas</a>
+                    <a href="/espectaculos">Nuestros espectáculos</a>
+                    <a href="/restaurantes">Nuestros restaurantes</a>
+                </div>
+            </div>
+            <a href="https://www.portaventuraworld.com/horarios-calendario" class="btn-horarios">Horarios</a>
+            <a href="https://www.portaventuraworld.com/entradas/portaventura" class="btn-horarios">Entradas</a>
+            <a href="https://www.portaventuraworld.com/hoteles-todos" class="btn-horarios">Hoteles</a>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Accesibilidad</h2>
+                <p>Acceso habilitado para personas con discapacidad y movilidad reducida.</p>
+            </div>
+            <div class="grid-item">
+                <h2>Eventos especiales</h2>
+                <p>Visita FerrariLand, nuestro nuevo parque de atracciones temático con la atracción más alta del mundo.
+                </p>
+            </div>
+            <div class="grid-item">
+                <h2>Datos curiosos</h2>
+                <p>PortAventura Park fue el primer parque temático de España. Actualmente tiene más de 5 km de montañas
+                    rusas.</p>
+            </div>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="https://media.portaventuraworld.com/mediaManager/image/2891f5e46d94b8dbbdcaf136aaca4f951c7706bebd5d5cf724934f870376c844.jpg?tx=ar_1.06,c_crop/w_530,h_500,c_fit"
+                    alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="https://media.portaventuraworld.com/mediaManager/image/d455932c90761b35ab7c6311c3d53e12d77131e232b3b1227bcff31a37283a30.jpg?tx=ar_1.06,c_crop/w_530,h_500,c_fit"
+                    alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="https://media.portaventuraworld.com/mediaManager/image/5feb67b420bcd502ddf833d27ccf56cfbaf1a2d0d16c8c77e997871677d62451.jpg?tx=ar_1.06,c_crop/w_530,h_500,c_fit"
+                    alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="https://media.portaventuraworld.com/mediaManager/image/ccb6daa632ea405dd7adaccf8c27023ae4e13d2f51ee157366b0e9ab9269733f.jpg?tx=ar_1.06,c_crop/w_530,h_500,c_fit"
+                    alt="Slide 4">
+            </div>
+            <div class="slide">
+                <img src="https://media.portaventuraworld.com/mediaManager/image/43bd71dfdfefdadd22b160c82b24021d1a7b9e6ead5993e5c94e94644b919118.jpg?tx=ar_1.06,c_crop/w_530,h_500,c_fit"
+                    alt="Slide 5">
+            </div>
         </div>
     </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@PortAventuraWorldTV"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/Portaventura_ES"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/portaventuraworld/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 </body>
+
 </html>
