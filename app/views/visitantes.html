@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Visitantes</h1>
+    <ul>
+        <%visitantes.forEach(visitantes=>{%>
+            <li>
+                <h2><%=visitantes.id%></h2>
+                <p><%=visitantes.nombre%></p>
+                <p><%=visitantes.apellido%></p>
+                <p><%=visitantes.fecha_nacimiento%></p>
+                <p><%=visitantes.genero%></p>
+                <p><%=visitantes.nacionalidad%></p>
+                <p><%=visitantes.tipo_documento%></p>
+                <p><%=visitantes.numero_documento%></p>
+                <p><%=visitantes.fecha_registro%></p>
+
+
+            </li>
+
+
+        <%})%>
+</body>
+</html>

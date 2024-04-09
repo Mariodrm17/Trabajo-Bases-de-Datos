@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas</title>
+</head>
+
+<body>
+    <h1>Areas</h1>
+    <ul>
+        <%areas.forEach(area=>{%>
+            <li>
+                <h2><%=area.nombre%></h2>
+                <p><%=area.id%></p>
+                <p><%=area.descripcion%></p>
+                <p><%=area.fecha_apertura%></p>
+                <p><%=area.ubicacion%></p>
+            </li>
+        <%})%>
+
+    </ul>
+
+</body>
+
+</html>
+
+
