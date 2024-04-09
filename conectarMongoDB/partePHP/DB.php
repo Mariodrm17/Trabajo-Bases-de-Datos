@@ -10,7 +10,7 @@ class DB{
        $this->host= 'localhost';
         $this->db= 'portaventura';
         $this->user= 'root';
-        $this->password ='Edumario2004';
+        $this->password ='';
         //$this->charset = 'utf8mb4';*/
     }
     function connect(){

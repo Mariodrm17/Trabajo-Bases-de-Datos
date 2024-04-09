@@ -17,6 +17,7 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, './app/views'));
 
 const atraccionRouters = require('./app/routes/atraccion');
+const areaRouters = require('./app/routes/area');
 const homeRouters = require('./app/routes/home');
 
 app.use(bodyParser.json({limit: '50mb'}));
