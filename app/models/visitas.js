@@ -10,13 +10,16 @@ const visitasSchema = new moongose.Schema(
             type: Number
         },
         fecha_visita: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0]; // Convertir a formato ISO sin la parte de la hora
+            }
         },
         cantidad_personas: {
             type: Number
         },
         monto_total: {
-            type: Number
+            type: Number 
         }
     }
 )
