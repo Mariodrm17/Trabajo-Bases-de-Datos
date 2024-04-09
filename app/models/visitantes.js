@@ -1,11 +1,7 @@
 const moongose = require('mongoose');
 const visitantesSchema = new moongose.Schema(
     {
-        id: {
-            type: Number,
-            required: true,
-            unique: true
-        },
+        
         nombre: {
             type: String
         },
@@ -13,7 +9,10 @@ const visitantesSchema = new moongose.Schema(
             type: String
         },
         fecha_nacimiento: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0];
+            }
         },
         genero: {
             type: String
@@ -25,10 +24,13 @@ const visitantesSchema = new moongose.Schema(
             type: String
         },
         numero_documento: {
-            type: Number
+            type: String
         },
         fecha_registro: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0]; 
+            }
         }    
 
     }

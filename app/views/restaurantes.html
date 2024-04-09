@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ess</title>
+</head>
+
+<body>
+    <h1>Restaurantes</h1>
+    <ul>
+        <%restaurantes.forEach(restaurante => { %>
+            <li>
+                <h2><%= restaurante.nombre %></h2>
+                <p><%= restaurante.tipo_cocina %></p>
+                <p><%= restaurante.ubicacion %></p>
+                <p><%= restaurante.horario_apertura %></p>
+                <p><%= restaurante.horario_cierre %></p>
+                <p><%= restaurante.capacidad %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>

@@ -1,11 +1,7 @@
 const moongose = require('mongoose');
 const areasSchema = new moongose.Schema(
     {
-        id: {
-            type: Number,
-            required: true,
-            unique: true
-        },
+        
         nombre: {
             type: String
         },
@@ -13,7 +9,10 @@ const areasSchema = new moongose.Schema(
             type: String
         },
         fecha_apertura: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0]; 
+            }
         },
         ubicacion: {
             type: String

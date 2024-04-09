@@ -21,6 +21,9 @@ const areasRouters = require('./app/routes/areas');
 const atraccionesRouters = require('./app/routes/atracciones');
 const empleadosRouters = require('./app/routes/empleados');
 const visitantesRouters = require('./app/routes/visitantes');
+const visitasRouters = require('./app/routes/visitas');
+const espectaculosRouters = require('./app/routes/espectaculos');
+const restaurantesRouters = require('./app/routes/restaurantes');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -30,6 +33,10 @@ app.use(areasRouters);
 app.use(atraccionesRouters);
 app.use(empleadosRouters);
 app.use(visitantesRouters);
+app.use(visitasRouters);
+app.use(espectaculosRouters);
+app.use(restaurantesRouters);
+
 
 
 app.listen(port, () => {
