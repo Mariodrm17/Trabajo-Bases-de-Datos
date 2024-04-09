@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortAventura</title>
+    <title>PortAventura World</title>
     <link rel="icon" type="image/png"
         href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Monserrat', sans-serif;
+            background-color: rgb(245, 245, 245);
             color: #333;
             margin: 0;
             padding: 0;
@@ -130,8 +131,8 @@
 
         .slide {
             display: inline-block;
-            width: 300px;
-            height: 200px;
+            width: 400px;
+            height: 300px;
             margin-right: 20px;
             background-color: #ccc;
             border-radius: 5px;
@@ -214,7 +215,7 @@
         .grid-item {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
             padding: 20px;
             text-align: left;
         }
@@ -226,6 +227,26 @@
 
         p {
             margin-bottom: 0;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(245, 245, 245, 0) 0%, rgba(245, 245, 245, 1) 100%);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -240,35 +261,19 @@
             <div class="dropdown">
                 <button class="dropbtn">Ver todo PortAventura Park</button>
                 <div class="dropdown-content">
-                    <a href="/areas">Nuestras áreas</a>
-                    <a href="/atracciones">Nuestras atracciones</a>
+                    <a href="/areas">Áreas del parque</a>
+                    <a href="/atracciones">Atracciones</a>
                     <a href="/empleados">Nuestros empleados</a>
-                    <a href="/visitantes">Nuestros visitantes</a>
-                    <a href="/visitas">Nuestras visitas</a>
-                    <a href="/espectaculos">Nuestros espectáculos</a>
-                    <a href="/restaurantes">Nuestros restaurantes</a>
+                    <a href="/visitantes">Reseñas de Visitantes</a>
+                    <a href="/visitas">Visitas</a>
+                    <a href="/espectaculos">Espectáculos</a>
+                    <a href="/restaurantes">Restaurantes</a>
                 </div>
             </div>
             <a href="https://www.portaventuraworld.com/horarios-calendario" class="btn-horarios">Horarios</a>
             <a href="https://www.portaventuraworld.com/entradas/portaventura" class="btn-horarios">Entradas</a>
             <a href="https://www.portaventuraworld.com/hoteles-todos" class="btn-horarios">Hoteles</a>
-        </div>
-
-        <div class="grid-container">
-            <div class="grid-item">
-                <h2>Accesibilidad</h2>
-                <p>Acceso habilitado para personas con discapacidad y movilidad reducida.</p>
-            </div>
-            <div class="grid-item">
-                <h2>Eventos especiales</h2>
-                <p>Visita FerrariLand, nuestro nuevo parque de atracciones temático con la atracción más alta del mundo.
-                </p>
-            </div>
-            <div class="grid-item">
-                <h2>Datos curiosos</h2>
-                <p>PortAventura Park fue el primer parque temático de España. Actualmente tiene más de 5 km de montañas
-                    rusas.</p>
-            </div>
+            <a href="https://www.portaventuraworld.com/blog" class="btn-horarios">Blog</a>
         </div>
 
         <div class="slideshow-container">
@@ -293,6 +298,28 @@
                     alt="Slide 5">
             </div>
         </div>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Accesibilidad</h2>
+                <p>Acceso habilitado para personas con discapacidad y movilidad reducida.</p>
+            </div>
+            <div class="grid-item">
+                <h2>Eventos especiales</h2>
+                <p>Visita FerrariLand, nuestro nuevo parque de atracciones temático con la atracción más alta del mundo.
+                </p>
+            </div>
+            <div class="grid-item">
+                <h2>Datos curiosos</h2>
+                <p>PortAventura Park fue el primer parque temático de España. Actualmente tiene más de 5 km de montañas
+                    rusas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="https://media.portaventuraworld.com/mediaManager/image/9faddc6130020170b63e7f64b4b2a54743c21bf8121431ac5ef5c9c59ae11cb2.jpg?tx=ar_2.72,c_crop/w_1024,h_376,c_fit"
+            alt="Descripción de la imagen">
     </div>
 
     <footer>
