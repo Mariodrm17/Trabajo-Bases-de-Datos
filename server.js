@@ -17,7 +17,7 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, './app/views'));
 
 const atraccionRouters = require('./app/routes/atraccion');
-const areaRouters = require('./app/routes/area');
+const areasRouters = require('./app/routes/areas');
 const homeRouters = require('./app/routes/home');
 
 app.use(bodyParser.json({limit: '50mb'}));
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(atraccionRouters);
 app.use(homeRouters);
+app.use(areasRouters);
 
 app.listen(port, () => {
     console.log(`La aplicaccion esta en linea en el puerto  ${port}`);
