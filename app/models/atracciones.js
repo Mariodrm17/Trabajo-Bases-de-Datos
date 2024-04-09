@@ -1,11 +1,7 @@
 const moongose = require('mongoose');
 const atraccionesSchema = new moongose.Schema(
     {
-        id: {
-            type: Number,
-            required: true,
-            unique: true
-        },
+        
         nombre: {
             type: String
         },
@@ -19,7 +15,10 @@ const atraccionesSchema = new moongose.Schema(
             type: String
         },
         fecha_apertura: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0];
+            }
         },
         tiempo_espera_promedio: {
             type: Number

@@ -6,13 +6,11 @@ const visitasSchema = new moongose.Schema(
             required: true,
             unique: true
         },
-        id_visitante: {
-            type: Number
-        },
+        
         fecha_visita: {
             type: Date,
             get: function(value) {
-                return value.toISOString().split('T')[0]; // Convertir a formato ISO sin la parte de la hora
+                return value.toISOString().split('T')[0];
             }
         },
         cantidad_personas: {
