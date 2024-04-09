@@ -1,6 +1,5 @@
-//traer el controlador
 const moongose = require('mongoose');
-const atraccionSchema = new moongose.Schema(
+const atraccionesSchema = new moongose.Schema(
     {
         id: {
             type: Number,
@@ -37,4 +36,4 @@ const atraccionSchema = new moongose.Schema(
 
     }
 )
-module.exports = moongose.model('atraccion', atraccionSchema);
+module.exports = moongose.model('atracciones', atraccionesSchema);
