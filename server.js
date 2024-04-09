@@ -19,6 +19,7 @@ app.set('views', path.join(__dirname, './app/views'));
 const atraccionRouters = require('./app/routes/atraccion');
 const areasRouters = require('./app/routes/areas');
 const homeRouters = require('./app/routes/home');
+const visitantesRouters = require('./app/routes/visitantes');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(atraccionRouters);
 app.use(homeRouters);
 app.use(areasRouters);
+app.use(visitantesRouters);
 
 app.listen(port, () => {
     console.log(`La aplicaccion esta en linea en el puerto  ${port}`);
