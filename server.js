@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, './app/views'));
 
 const homeRouters = require('./app/routes/home');
 const areasRouters = require('./app/routes/areas');
-const atraccionRouters = require('./app/routes/atraccion');
+const atraccionesRouters = require('./app/routes/atracciones');
 const empleadosRouters = require('./app/routes/empleados');
 const visitantesRouters = require('./app/routes/visitantes');
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(homeRouters);
 app.use(areasRouters);
-app.use(atraccionRouters);
+app.use(atraccionesRouters);
 app.use(empleadosRouters);
 app.use(visitantesRouters);
 
