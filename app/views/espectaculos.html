@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espectaculos - PortAventura</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+</head>
+
+<body>
+    <h1>Espectaculos</h1>
+    <ul>
+        <%espectaculos.forEach(espectaculo => { %>
+            <li>
+                <h2><%= espectaculo.nombre %></h2>
+                <p><%= espectaculo.descripcion %></p>
+                <p><%= espectaculo.hora_inicio %></p>
+                <p><%= espectaculo.duracion %></p>
+                <p><%= espectaculo.ubicacion %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>

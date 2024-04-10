@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Visitantes - PortAventura</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; 
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6600;
+            text-align: center;
+        }
+        .visitante {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffcc; 
+            border-radius: 5px;
+        }
+        .visitante h2 {
+            color: #ff6600;
+        }
+        .visitante p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .visitante .reseña {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reseñas de Visitantes</h1>
+        <ul>
+            <% visitantes.forEach(visitante => { %>
+                <li class="visitante">
+                    <h2><%= visitante.nombre %> <%= visitante.apellido %></h2>
+                    <p><strong>Fecha de Nacimiento:</strong> <%= visitante.fecha_nacimiento %></p>
+                    <p><strong>Género:</strong> <%= visitante.genero %></p>
+                    <p><strong>Nacionalidad:</strong> <%= visitante.nacionalidad %></p>
+                    <p><strong>Tipo de Documento:</strong> <%= visitante.tipo_documento %></p>
+                    <p><strong>Número de Documento:</strong> <%= visitante.numero_documento %></p>
+                    <p><strong>Fecha de Registro:</strong> <%= visitante.fecha_registro %></p>
+                    <div class="reseña">
+
+                        <% 
+                            // Ejemplo de reseña inventada
+                            const reseñas = [
+                                "¡Excelente visitante! Muy amable y respetuoso.",
+                                "Una persona muy simpática y educada. ¡Esperamos verlo de nuevo pronto!",
+                                "Visitante interesante con el que tuvimos una gran conversación.",
+                                "Nos alegró el día con su visita. ¡Recomendado!"
+                                // Puedes agregar más reseñas inventadas aquí
+                            ];
+                            // Selecciona una reseña aleatoria para cada visitante
+                            const randomReseña = reseñas[Math.floor(Math.random() * reseñas.length)];
+                            // Muestra la reseña en el HTML
+                            %> <%= randomReseña %>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
