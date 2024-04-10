@@ -4,24 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>Empleados - PortAventura</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <style>
+        body {
+            background-image: url('https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/002/928/original/Costa_Caribe_Acuatic_Park_32.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .empleado-info {
+            background-color: #e0edf0;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            border-radius: 10px;
+        }
+
+        .empleado-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        ul {
+            margin: 40px;
+            padding: 0; 
+        }
+
+        li {
+            list-style-type: rgb(190, 250, 247); 
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Empleados</h1>
+
+    <h1>
+        <img src="https://play-lh.googleusercontent.com/FFA_vOlqO8cYoToYQ_Ar2Q34CFRSSYdeowzw3eeJlDjJuwxiuPXuV-_ohBIPB1j4qvxA" alt="Icono de empleados" style="width: 150px; margin-left: auto; margin-right: auto; display: block;">
+    </h1>
+
     <ul>
-        <% empleados.forEach(empleado => { %>
-            <li>
-                
-                <p><%= empleado.nombre %></p>
-                <p><%= empleado.apellido %></p>
-                <p><%= empleado.puesto %></p>
-                <p><%= empleado.area_trabajo %></p>
-                <p><%= empleado.fecha_contratacion %></p>
-                <p><%= empleado.salario %></p>
-                <p><%= empleado.estado %></p>
-                <p><%= empleado.fecha_registro %></p>
-            </li>
+        <% empleados.forEach((empleado, index) => { %>
+        <li class="empleado-info">
+            <div>
+                <img src="https://img.freepik.com/foto-gratis/muchacho-tranquilo-mostrando-brazos-cruzados_1149-1248.jpg?t=st=1712737848~exp=1712741448~hmac=919701805b9920632ebd98caf690bb1e355ff8106da4b5d781ca2fb9341f4d9f&w=740" alt="Foto de <%= empleado.nombre %> <%= empleado.apellido %>"
+                    class="empleado-foto">
+            </div>
+            <div>
+                <p><strong>Nombre:</strong> <%= empleado.nombre %></p>
+                <p><strong>Apellido:</strong> <%= empleado.apellido %></p>
+                <p><strong>Puesto:</strong> <%= empleado.puesto %></p>
+                <p><strong>Área de Trabajo:</strong> <%= empleado.area_trabajo %></p>
+                <p><strong>Fecha de Contratación:</strong> <%= empleado.fecha_contratacion %></p>
+                <p><strong>Salario:</strong> <%= empleado.salario %></p>
+                <p><strong>Estado:</strong> <%= empleado.estado %></p>
+                <p><strong>Fecha de Registro:</strong> <%= empleado.fecha_registro %></p>
+            </div>
+        </li>
         <% }) %>
     </ul>
 </body>
