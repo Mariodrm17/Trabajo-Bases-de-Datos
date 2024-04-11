@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áreas - PortAventura</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,27 +22,23 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px; /* Ampliar el contenedor */
             margin: 0 auto;
             padding: 20px;
+            display: flex; /* Mostrar en modo flex */
+            flex-wrap: wrap; /* Permitir envolver elementos */
+            justify-content: center; /* Centrar contenido */
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        li {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-            width: 45%; /* Para que se muestren dos elementos por fila */
-            box-sizing: border-box; /* Para incluir el padding y el border en el width */
+        .area {
+            width: calc(50% - 20px); /* Ancho del 50%, menos el espacio entre áreas */
+            margin: 10px; /* Espacio entre áreas */
+            text-align: left; /* Alinear texto a la izquierda */
+            padding: 20px; /* Espacio interno */
+            background-color: #fff; /* Fondo blanco */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+            box-sizing: border-box; /* Incluir padding en el ancho */
         }
 
         h2 {
@@ -50,38 +48,79 @@
 
         p {
             margin: 5px 0;
+            color: #6c757d; /* Color oscuro pastel */
         }
 
         .area-image {
             max-width: 100%;
             border-radius: 5px;
         }
+
+        .logo {
+            width: 10%;
+            margin: 20px auto;
+        }
+
+        .data {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .data li {
+            margin-bottom: 10px; /* Espacio entre cada dato */
+            line-height: 1.5; /* Espaciado entre líneas */
+        }
+
+        .data li::before {
+            content: "•"; /* Punto de viñeta */
+            color: #6c757d; /* Color oscuro pastel */
+            margin-right: 5px; /* Espacio entre el punto y el texto */
+        }
+
     </style>
 </head>
+
 <body>
-    <h1>Áreas - PortAventura</h1>
+    <img src="https://static.colectivosvip.com/public/colectivos/533/logo-1614354504258.png" alt="Áreas - PortAventura" class="logo">
     <div class="container">
-        <ul>
-            <%areas.forEach(area => {%>
-                <li>
-                    <h2><%=area.nombre%></h2>
-                    <!-- Aquí puedes agregar la imagen de la zona -->
-                    <% if(area.nombre === 'Mediterráneo') { %>
-                        <img src="https://www.pafans.com/static/area/portaventura-park_mediterrania.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
-                    <% } else if(area.nombre === 'China') { %>
-                        <img src="https://www.portaventuraevents.com/wp-content/uploads/2019/06/PortAventura_Park_Banner_4_China.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
-                    <% } else if(area.nombre === 'México') { %>
-                        <img src="https://www.pafans.com/static/area/portaventura-park_mexico.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
-                    <% } else if(area.nombre === 'Polinesia') { %>
-                        <img src="https://www.pafans.com/static/area/portaventura-park_polynesia.jpg" alt="Imagen de <%=area.nombre%>" class="area-image">
-                    <% } %>
-                   
-                    <p>Descripción: <%=area.descripcion%></p>
-                    <p>Fecha de apertura: <%=area.fecha_apertura%></p>
-                    <p>Ubicación: <%=area.ubicacion%></p>
-                </li>
-            <%})%>
-        </ul>
+        <div class="area">
+            <h2>Mediterráneo</h2>
+            <img src="https://www.pafans.com/static/area/portaventura-park_mediterrania.jpg" alt="Imagen de Mediterráneo" class="area-image">
+            <ul class="data">
+                <li><strong>Descripción:</strong> Área temática inspirada en el Mediterráneo y sus culturas.</li>
+                <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
+                <li><strong>Ubicación:</strong> PortAventura World</li>
+            </ul>
+        </div>
+        <div class="area">
+            <h2>China</h2>
+            <img src="https://www.portaventuraevents.com/wp-content/uploads/2019/06/PortAventura_Park_Banner_4_China.jpg" alt="Imagen de China" class="area-image">
+            <ul class="data">
+                <li><strong>Descripción:</strong> Área temática inspirada en la China antigua y su cultura.</li>
+                <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
+                <li><strong>Ubicación:</strong> PortAventura World</li>
+            </ul>
+        </div>
+        <div class="area">
+            <h2>México</h2>
+            <img src="https://www.pafans.com/static/area/portaventura-park_mexico.jpg" alt="Imagen de México" class="area-image">
+            <ul class="data">
+                <li><strong>Descripción:</strong> Área temática inspirada en la cultura y arquitectura mexicana.</li>
+                <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
+                <li><strong>Ubicación:</strong> PortAventura World</li>
+            </ul>
+        </div>
+        <div class="area">
+            <h2>Polinesia</h2>
+            <img src="https://www.pafans.com/static/area/portaventura-park_polynesia.jpg" alt="Imagen de Polinesia" class="area-image">
+            <ul class="data">
+                <li><strong>Descripción:</strong> Área temática inspirada en las islas del Pacífico y su cultura.</li>
+                <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
+                <li><strong>Ubicación:</strong> PortAventura World</li>
+            </ul>
+        </div>
     </div>
 </body>
+
 </html>
