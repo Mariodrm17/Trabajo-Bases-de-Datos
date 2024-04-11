@@ -11,10 +11,22 @@ const restaurantesSchema = new moongose.Schema(
             type: String
         },
         horario_apertura: {
-            type: Date
+            type: String,
+            validate: {
+                validator: function(value) {
+                    return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(value);
+                },
+                message: props => `${props.value} no es un formato de hora válido (HH:MM:SS)!`
+            }
         },
         horario_cierre: {
-            type: Date
+            type: String,
+            validate: {
+                validator: function(value) {
+                    return /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/.test(value);
+                },
+                message: props => `${props.value} no es un formato de hora válido (HH:MM:SS)!`
+            }
         },
         capacidad: {
             type: Number

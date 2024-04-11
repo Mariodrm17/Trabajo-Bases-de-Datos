@@ -1,12 +1,7 @@
-//traer el controlador
 const moongose = require('mongoose');
-const atraccionSchema = new moongose.Schema(
+const atraccionesSchema = new moongose.Schema(
     {
-        id: {
-            type: Number,
-            required: true,
-            unique: true
-        },
+        
         nombre: {
             type: String
         },
@@ -20,7 +15,10 @@ const atraccionSchema = new moongose.Schema(
             type: String
         },
         fecha_apertura: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0];
+            }
         },
         tiempo_espera_promedio: {
             type: Number
@@ -37,4 +35,4 @@ const atraccionSchema = new moongose.Schema(
 
     }
 )
-module.exports = moongose.model('atraccion', atraccionSchema);
+module.exports = moongose.model('atracciones', atraccionesSchema);

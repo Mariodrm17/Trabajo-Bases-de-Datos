@@ -4,33 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atracciones</title>
+    <title>Atracciones - PortAventura</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/002/928/original/Costa_Caribe_Acuatic_Park_32.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .atraccion {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .atraccion-img {
+            flex: 1;
+            max-width: 300px;
+            margin-right: 20px;
+        }
+        .atraccion-img img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .atraccion-info {
+            flex: 2;
+            padding-left: 20px;
+        }
+        .atraccion-info h2 {
+            color: #ff6600; 
+            margin-bottom: 10px;
+        }
+        .atraccion-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .ubicacion {
+            margin-top: 10px;
+            font-style: italic;
+            color: #777;
+        }
+        @media screen and (max-width: 768px) {
+            .atraccion {
+                flex-direction: column;
+                text-align: center;
+            }
+            .atraccion-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .atraccion-info {
+                padding-left: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Atracciones</h1>
-    <ul>
-        <%atracciones.forEach(atraccion=>{%>
-            <li>
-                <h2><%=atraccion.nombre%></h2>
-                <p><%=atraccion.id%></p>
-                <p><%=atraccion.tipo%></p>
-                <p><%=atraccion.altura_minima%></p>
-                <p><%=atraccion.descripcion%></p>
-                <p><%=atraccion.fecha_apertura%></p>
-                <p><%=atraccion.tiempo_espera_promedio%></p>
-                <p><%=atraccion.ubicacion%></p>
-                <p><%=atraccion.capacidad%></p>
-                <p><%=atraccion.estado%></p>
-
-
-            </li>
-
-
-        <%})%>
-
-    </ul>
-
+    <div class="container">
+        <h1>Atracciones de PortAventura</h1>
+        <div class="atracciones">
+            <% atracciones.forEach(atraccion => { %>
+                <div class="atraccion">
+                    <div class="atraccion-img">
+                        <% if (atraccion.nombre === "Shambhala") { %>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp1AUyxY-F4TOJA6a58WhyNbgR6bTXqoJ1Rw&s" alt="Foto de Shambhala" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Furius Baco") { %>
+                            <img src="https://s1.elespanol.com/2022/07/18/ocio/688691787_225897444_1706x960.jpg" alt="Foto de Furius Baco" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Dragon Khan") { %>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFog5qLX84MG4RavWu-kF8h41EcfDCOAX-ZQ&s" alt="Foto de Dragon Khan" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Red Force") { %>
+                            <img src="https://t2.uc.ltmcdn.com/es/posts/5/3/9/europa_park_52935_1_600.webp" alt="Foto de Red Force" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Tutuki Splash") { %>
+                            <img src="https://t1.uc.ltmcdn.com/es/posts/5/3/9/alton_towers_52935_4_600.webp" alt="Foto de Tutuki Splash" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Hurakan Condor") { %>
+                            <img src="https://t1.uc.ltmcdn.com/es/posts/5/3/9/port_aventura_world_52935_5_600.webp" alt="Foto de Hurakan Condor" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Stampida") { %>
+                            <img src="https://t2.uc.ltmcdn.com/es/posts/5/3/9/six_flags_magic_mountain_52935_8_600.webp" alt="Foto de Stampida" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Silver River Flume") { %>
+                            <img src="https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2019/09/09/5fa536d640bd2.jpeg" alt="Foto de Silver River Flume" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Templo del Fuego") { %>
+                            <img src="https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2019/09/09/5fa5838d4e99d.jpeg" alt="Foto de Templo del Fuego" class="atraccion-foto">
+                        <% } else if (atraccion.nombre === "Sea Odyssey") { %>
+                            <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/09/europa-park.jpg?tf=1080x" alt="Foto de Sea Odyssey" class="atraccion-foto">
+                        <% } else { %>
+                            <img src="" alt="Foto de <%= atraccion.nombre %>" class="atraccion-foto">
+                        <% } %>
+                    </div>
+                    <div class="atraccion-info">
+                        <h2><%= atraccion.nombre %></h2>
+                        <p><strong>Tipo:</strong> <%= atraccion.tipo %></p>
+                        <p><strong>Altura Mínima:</strong> <%= atraccion.altura_minima %> m</p>
+                        <p><strong>Descripción:</strong> <%= atraccion.descripcion %></p>
+                        <p><strong>Fecha de Apertura:</strong> <%= atraccion.fecha_apertura %></p>
+                        <p><strong>Tiempo de Espera Promedio:</strong> <%= atraccion.tiempo_espera_promedio %> minutos</p>
+                        <p><strong>Capacidad:</strong> <%= atraccion.capacidad %> personas</p>
+                        <p><strong>Estado:</strong> <%= atraccion.estado %></p>
+                        <p class="ubicacion"><strong>Ubicación:</strong> <%= atraccion.ubicacion %> (Ficticio)</p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 </body>
 
 </html>

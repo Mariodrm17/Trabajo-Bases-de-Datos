@@ -6,17 +6,18 @@ const visitasSchema = new moongose.Schema(
             required: true,
             unique: true
         },
-        id_visitante: {
-            type: Number
-        },
+        
         fecha_visita: {
-            type: Date
+            type: Date,
+            get: function(value) {
+                return value.toISOString().split('T')[0];
+            }
         },
         cantidad_personas: {
             type: Number
         },
         monto_total: {
-            type: Number
+            type: Number 
         }
     }
 )

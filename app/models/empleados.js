@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const empleadosSchema = new mongoose.Schema({
-    id: {
-        type: Number,
-        required: true,
-        unique: true
-    },
+    
     nombre: {
         type: String,
         required: true
@@ -22,7 +18,11 @@ const empleadosSchema = new mongoose.Schema({
         type: String
     },
     fecha_contratacion: {
-        type: Date
+        type: Date,
+        get: function(value) {
+            return value.toISOString().split('T')[0];
+        }
+
     },
     salario: {
         type: Number
@@ -34,7 +34,9 @@ const empleadosSchema = new mongoose.Schema({
     },
     fecha_registro: {
         type: Date,
-        default: Date.now
+        get: function(value) {
+            return value.toISOString().split('T')[0]; 
+        }
     }
 });
 
