@@ -76,7 +76,20 @@
             <h1>Empleados - PortAventura</h1>
         </div>
 
+        <!-- Formulario para buscar empleados por nombre -->
+        <form action="/empleados/buscar" method="POST">
+            <label for="nombre">Buscar por nombre:</label>
+            <select name="nombre" id="nombre">
+                <!-- Inserta aquí opciones de nombres de empleados desde la base de datos -->
+                <% empleados.forEach((empleado, index) => { %>
+                <option value="<%= empleado.nombre %>"><%= empleado.nombre %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+
         <ul>
+            <!-- Lista de empleados existente aquí -->
             <% empleados.forEach((empleado, index) => { %>
             <li class="empleado-info">
                 <div>
