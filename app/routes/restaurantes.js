@@ -4,4 +4,5 @@ const router = express.Router();
 
 const path = 'restaurantes';
 router.get(`/${path}`, controller.getData);
+
 module.exports = router;

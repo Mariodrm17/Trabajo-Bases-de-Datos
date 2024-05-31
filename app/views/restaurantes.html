@@ -46,76 +46,82 @@
             grid-gap: 20px;
             justify-content: center;
         }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Nuestros restaurantes</h1>
+    <div class="search-container">
+        <form action="/restaurantes" method="get">
+            <label for="aforo">Buscar por aforo (capacidad mínima):</label>
+            <input type="number" id="aforo" name="aforo" min="1">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
     <div class="restaurant-grid">
-        <% for (let i = 0; i < restaurantes.length; i++) { %>
-            <li class="restaurant-info">
-                <h2><%= restaurantes[i].nombre %></h2>
-                <% if (restaurantes[i].foto) { %>
-                    <img src="<%= restaurantes[i].foto %>" alt="<%= restaurantes[i].nombre %>">
-                <% } %>
-                <p><strong>Tipo de Cocina:</strong> <%= restaurantes[i].tipo_cocina %></p>
-                <p><strong>Ubicación:</strong> <%= restaurantes[i].ubicacion %></p> 
-                <p><strong>Horario de Apertura:</strong> <%= restaurantes[i].horario_apertura %></p> 
-                <p><strong>Horario de Cierre:</strong> <%= restaurantes[i].horario_cierre %></p>
-                <p><strong>Capacidad:</strong> <%= restaurantes[i].capacidad %></p> 
-                <% if (restaurantes[i].nombre === "La Taberna del Pirata") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="taberna-img" src="https://hotelescostablanca-9d29.kxcdn.com/storage/app/uploads/public/61f/bc9/670/61fbc96705879288603008.jpg" alt="Taberna del Pirata">
-                        
-                    </div>
-                <% } else if (restaurantes[i].nombre === "Ristorante Italiano") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="ristorante-img" src="https://media.portaventuraworld.com/mediaManager/image/e90722224adb742dae29c1f02ff726e15088f101c02c40e5d3106bfb9ee060af.jpg?tx=ar_1.06,c_crop/w_1060,h_1000,c_fit" alt="Ristorante Italiano">
-                    
-                <% }else if (restaurantes[i].nombre === "Bistró Francés") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="ristorante-img" src="https://www.estiber.com/blog/wp-content/uploads/2022/01/restaurantes-port-aventura-1.jpg" alt="Bistro">
-                       
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Barbacoa Mexicana") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="barbacoa-img" src="https://media-cdn.tripadvisor.com/media/photo-s/15/71/85/52/buenvenidos-a-mexico.jpg" alt="Barbacoa">
-                       
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Sushi Lounge") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="sushi-img" src="https://media.portaventuraworld.com/mediaManager/image/5a2447fbbcc6bc1de1d529cb6d0d5f8698a2d89f4de7acf4f25c5ed880393a1f.jpg?tx=ar_1.80,c_crop/w_2048,h_1140,c_fit" alt="sushi">
-                        
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Brasería Argentina") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="braseria-img" src="https://mana75.es/wp-content/webp-express/webp-images/uploads/2023/08/Parrilla-Alfonsina-parrillada-argentina-en-Barcelona.jpg.webp" alt="Braseria">
-                      
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Cafetería del Lago") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="cafeteria-img" src="https://madriddiferente.com/wp-content/uploads/2021/03/Villa-Verbena-Madrid-en-el-Lago-La-Casa-de-Campo-de-Triciclo.jpg" alt="cafeteria">
-                       
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Cantina Mexicana") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="cantina-img" src="https://media-cdn.tripadvisor.com/media/photo-s/13/0c/bf/f1/disfrutaras-de-un-verdadero.jpg" alt="cantina">
-                     
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Pizzería del Bosque Encantado") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="pizzeria-img" src="https://media-cdn.tripadvisor.com/media/photo-s/0b/a9/af/d4/ambiente-hogareno-y-acogedor.jpg" alt="pizzeria">
-                      
-                    </div>
-                <% }else if (restaurantes[i].nombre === "Café Parisino") { %> 
-                    <div style="text-align: right;"> 
-                        <img class="cafe-img" src="https://media.revistaad.es/photos/62023c97249b23f265aa8136/16:9/w_2560%2Cc_limit/DSCF8129_CC_NMohadjer.jpg" alt="cafe">
-                        
-                    </div>
-                <% } %>
-            </li>
-        <% } %> 
-    </ul>
+        <% if (restaurantes && restaurantes.length > 0) { %>
+            <% for (let i = 0; i < restaurantes.length; i++) { %>
+                <li class="restaurant-info">
+                    <h2><%= restaurantes[i].nombre %></h2>
+                    <% if (restaurantes[i].foto) { %>
+                        <img src="<%= restaurantes[i].foto %>" alt="<%= restaurantes[i].nombre %>">
+                    <% } %>
+                    <p><strong>Tipo de Cocina:</strong> <%= restaurantes[i].tipo_cocina %></p>
+                    <p><strong>Ubicación:</strong> <%= restaurantes[i].ubicacion %></p> 
+                    <p><strong>Horario de Apertura:</strong> <%= restaurantes[i].horario_apertura %></p> 
+                    <p><strong>Horario de Cierre:</strong> <%= restaurantes[i].horario_cierre %></p>
+                    <p><strong>Capacidad:</strong> <%= restaurantes[i].capacidad %></p>
+                    <% if (restaurantes[i].nombre === "La Taberna del Pirata") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="taberna-img" src="https://hotelescostablanca-9d29.kxcdn.com/storage/app/uploads/public/61f/bc9/670/61fbc96705879288603008.jpg" alt="Taberna del Pirata">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Ristorante Italiano") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="ristorante-img" src="https://media.portaventuraworld.com/mediaManager/image/e90722224adb742dae29c1f02ff726e15088f101c02c40e5d3106bfb9ee060af.jpg?tx=ar_1.06,c_crop/w_1060,h_1000,c_fit" alt="Ristorante Italiano">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Bistró Francés") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="ristorante-img" src="https://www.estiber.com/blog/wp-content/uploads/2022/01/restaurantes-port-aventura-1.jpg" alt="Bistro">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Barbacoa Mexicana") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="barbacoa-img" src="https://media-cdn.tripadvisor.com/media/photo-s/15/71/85/52/buenvenidos-a-mexico.jpg" alt="Barbacoa">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Sushi Lounge") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="sushi-img" src="https://media.portaventuraworld.com/mediaManager/image/5a2447fbbcc6bc1de1d529cb6d0d5f8698a2d89f4de7acf4f25c5ed880393a1f.jpg?tx=ar_1.80,c_crop/w_2048,h_1140,c_fit" alt="sushi">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Brasería Argentina") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="braseria-img" src="https://mana75.es/wp-content/webp-express/webp-images/uploads/2023/08/Parrilla-Alfonsina-parrillada-argentina-en-Barcelona.jpg.webp" alt="Braseria">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Cafetería del Lago") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="cafeteria-img" src="https://madriddiferente.com/wp-content/uploads/2021/03/Villa-Verbena-Madrid-en-el-Lago-La-Casa-de-Campo-de-Triciclo.jpg" alt="cafeteria">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Cantina Mexicana") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="cantina-img" src="https://media-cdn.tripadvisor.com/media/photo-s/13/0c/bf/f1/disfrutaras-de-un-verdadero.jpg" alt="cantina">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Pizzería del Bosque Encantado") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="pizzeria-img" src="https://media-cdn.tripadvisor.com/media/photo-s/0b/a9/af/d4/ambiente-hogareno-y-acogedor.jpg" alt="pizzeria">
+                        </div>
+                    <% } else if (restaurantes[i].nombre === "Café Parisino") { %> 
+                        <div style="text-align: right;"> 
+                            <img class="cafe-img" src="https://media.revistaad.es/photos/62023c97249b23f265aa8136/16:9/w_2560%2Cc_limit/DSCF8129_CC_NMohadjer.jpg" alt="cafe">
+                        </div>
+                    <% } %>
+                </li>
+            <% } %> 
+        <% } else { %>
+            <p>No se encontraron restaurantes con el aforo especificado.</p>
+        <% } %>
+    </div>
 </body>
 
 </html>
