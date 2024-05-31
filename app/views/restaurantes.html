@@ -59,6 +59,15 @@
         <form action="/restaurantes" method="get">
             <label for="aforo">Buscar por aforo (capacidad mínima):</label>
             <input type="number" id="aforo" name="aforo" min="1">
+            <label for="continente">Seleccionar continente:</label>
+            <select id="continente" name="continente">
+                <option value="">Todos</option>
+                <option value="Europa">Europa</option>
+                <option value="América">América</option>
+                <option value="Asia">Asia</option>
+                <option value="África">África</option>
+                <option value="Oceanía">Oceanía</option>
+            </select>
             <button type="submit">Buscar</button>
         </form>
     </div>
@@ -75,6 +84,7 @@
                     <p><strong>Horario de Apertura:</strong> <%= restaurantes[i].horario_apertura %></p> 
                     <p><strong>Horario de Cierre:</strong> <%= restaurantes[i].horario_cierre %></p>
                     <p><strong>Capacidad:</strong> <%= restaurantes[i].capacidad %></p>
+                    <p><strong>Continente:</strong> <%= restaurantes[i].continente %></p> <!-- Nuevo -->
                     <% if (restaurantes[i].nombre === "La Taberna del Pirata") { %> 
                         <div style="text-align: right;"> 
                             <img class="taberna-img" src="https://hotelescostablanca-9d29.kxcdn.com/storage/app/uploads/public/61f/bc9/670/61fbc96705879288603008.jpg" alt="Taberna del Pirata">
