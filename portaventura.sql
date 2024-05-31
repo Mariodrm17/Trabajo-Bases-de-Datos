@@ -38,6 +38,11 @@ CREATE TABLE IF NOT EXISTS `areas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+ALTER TABLE `atracciones` ADD COLUMN `area_id` INT NOT NULL; -- Añadir columna para la relación
+
+ALTER TABLE `atracciones` ADD CONSTRAINT `fk_area_atraccion` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`); -- Definir la relación
+
+
 --
 -- Volcado de datos para la tabla `areas`
 --
@@ -66,8 +71,11 @@ CREATE TABLE IF NOT EXISTS `atracciones` (
   `ubicacion` varchar(100) DEFAULT NULL,
   `capacidad` int DEFAULT NULL,
   `estado` enum('Operativa','En Mantenimiento') DEFAULT 'Operativa',
-  PRIMARY KEY (`id`)
+  `area_id` INT NOT NULL, -- Nueva columna para la relación con áreas
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_area_atraccion` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) -- Definición de la relación
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 --
 -- Volcado de datos para la tabla `atracciones`
