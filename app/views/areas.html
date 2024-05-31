@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áreas - PortAventura</title>
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,6 +83,14 @@
 </head>
 
 <body>
+    <!-- Formulario de búsqueda -->
+    <form action="/areas/search" method="GET">
+        <label for="search">Buscar área:</label>
+        <input type="text" id="search" name="q" placeholder="Ingrese el nombre del área">
+        <button type="submit">Buscar</button>
+    </form>   
+
+
     <img src="https://static.colectivosvip.com/public/colectivos/533/logo-1614354504258.png" alt="Áreas - PortAventura" class="logo">
     <div class="container">
         <div class="area">
@@ -109,7 +118,7 @@
                 <li><strong>Descripción:</strong> Área temática inspirada en la cultura y arquitectura mexicana.</li>
                 <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
                 <li><strong>Ubicación:</strong> PortAventura World</li>
-            </ul>
+            </ul>           
         </div>
         <div class="area">
             <h2>Polinesia</h2>
@@ -118,9 +127,13 @@
                 <li><strong>Descripción:</strong> Área temática inspirada en las islas del Pacífico y su cultura.</li>
                 <li><strong>Fecha de apertura:</strong> 1995-04-02</li>
                 <li><strong>Ubicación:</strong> PortAventura World</li>
-            </ul>
+            </ul>           
         </div>
     </div>
+    <form action="/areas/deleteWithoutLocation" method="POST">
+        <button type="submit">Eliminar áreas sin ubicación</button>
+    </form>
+    
 </body>
 
 </html>
