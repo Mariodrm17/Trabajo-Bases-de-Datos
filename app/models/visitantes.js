@@ -1,38 +1,44 @@
-const moongose = require('mongoose');
-const visitantesSchema = new moongose.Schema(
-    {
-        
-        nombre: {
-            type: String
-        },
-        apellido: {
-            type: String
-        },
-        fecha_nacimiento: {
-            type: Date,
-            get: function(value) {
-                return value.toISOString().split('T')[0];
-            }
-        },
-        genero: {
-            type: String
-        },
-        nacionalidad: {
-            type: String
-        },
-        tipo_documento: {
-            type: String
-        },
-        numero_documento: {
-            type: String
-        },
-        fecha_registro: {
-            type: Date,
-            get: function(value) {
-                return value.toISOString().split('T')[0]; 
-            }
-        }    
+const mongoose = require('mongoose');
 
+const visitantesSchema = new mongoose.Schema({
+    nombre: {
+        type: String,
+        required: true
+    },
+    apellido: {
+        type: String,
+        required: true
+    },
+    fecha_nacimiento: {
+        type: Date,
+        required: true,
+        get: function(value) {
+            return value.toISOString().split('T')[0];
+        }
+    },
+    genero: {
+        type: String,
+        required: true
+    },
+    nacionalidad: {
+        type: String,
+        required: true
+    },
+    tipo_documento: {
+        type: String,
+        required: true
+    },
+    numero_documento: {
+        type: String,
+        required: true
+    },
+    fecha_registro: {
+        type: Date,
+        required: true,
+        get: function(value) {
+            return value.toISOString().split('T')[0];
+        }
     }
-)
-module.exports = moongose.model('visitantes', visitantesSchema);
+});
+
+module.exports = mongoose.model('Visitantes', visitantesSchema);
