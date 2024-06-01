@@ -4,4 +4,7 @@ const router = express.Router();
 
 const path = 'visitas';
 router.get(`/${path}`, controller.getData);
+router.get(`/${path}/agregar`, controller.showAddForm);
+router.post(`/${path}/agregar`, controller.addVisit);
+
 module.exports = router;
