@@ -6,4 +6,5 @@ const path = 'atracciones';
 
 router.get(`/${path}`, controller.getData);
 router.get(`/${path}/kids`, controller.getAttractionsForKids);
+
 module.exports = router;
