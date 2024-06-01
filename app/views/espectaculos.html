@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espectáculos - PortAventura</title>
-    <link rel="icon" type="image/png"
-        href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/20/97/c7/2097c742ca8a294cd8e879a63f7b225e.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,26 +18,22 @@
             align-items: center;
             min-height: 100vh;
         }
-
         header {
             background-color: #0078d4;
             color: white;
             padding: 10px;
             text-align: center;
         }
-
         h1 {
             margin-top: 20px;
             text-align: center;
         }
-
         ul {
             list-style-type: none;
             padding: 0;
             margin: 20px auto;
             max-width: 600px;
         }
-
         li {
             background-color: white;
             border-radius: 5px;
@@ -46,14 +41,48 @@
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         h2 {
             margin-top: 0;
             color: #0078d4;
         }
-
         p {
             margin: 5px 0;
+        }
+        .actions a {
+            margin-right: 10px;
+            color: #0078d4;
+            text-decoration: none;
+        }
+        .actions a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="time"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -64,41 +93,43 @@
     </header>
     <main>
         <ul>
-            <%espectaculos.forEach(espectaculo=> { %>
+            <% espectaculos.forEach(espectaculo => { %>
                 <li>
                     <div>
-                        <% if (espectaculo.nombre === "Fantasía Acuática") { %>
-                            <img src="https://www.entradas.com/obj/media/ES-eventim/galery/kuenstler/i/Illafantasia9.jpg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "El Circo de las Estrellas") { %>
-                            <img src="https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/012/391/original/PAP-CH_ESP_WDOM_GEN_0619_001.jpg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Aventuras en el Tiempo") { %>
-                            <img src="https://www.pafans.com/static/guide/portaventura-park/china/revolution_image.jpg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Fuegos Artificiales Nocturnos") { %>
-                            <img src="https://media.portaventuraworld.com/mediaManager/image/88e7bb2edf27f020bdeb084d2e3371876607bcb417756dc0659b0c5648067450.png" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Concierto de Rock en Vivo") { %>
-                            <img src="https://www.pafans.com/static/resort/portaventura-park/halloween/rock-symphony-b466p.jpg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Mundo de Magia") { %>
-                            <img src="https://media.portaventuraworld.com/mediaManager/image/75ac159e950944dcde508afdc429136a62f47b23c600cf6909e5e6b258b6d705.jpg?tx=ar_0.79,c_crop/w_450,h_570,c_fit" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Danza del León") { %>
-                            <img src="https://imagenes.heraldo.es/files/image_990_556/uploads/imagenes/2022/08/06/destination-dance-un-nuevo-show-musical-acrobatico-de-portaventura.jpeg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Aventura en la Jungla") { %>
-                            <img src="https://media.portaventuraworld.com/mediaManager/image/1a1f16ae6bd9b5c291a95a9858f8e263d04e496a51c368bb92f684b464257d8a.jpg?tx=ar_0.79,c_crop/w_675,h_855,c_fit" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Cuentos Encantados") { %>
-                            <img src="https://media.portaventuraworld.com/mediaManager/image/429429f7fb6dae42beed9bd3656349113dca9f08f4faf153c5d0490233bc03c0.jpg?tx=ar_1.86,c_crop/w_335,h_180,c_fit" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% } else if (espectaculo.nombre === "Cine al Aire Libre") { %>
-                            <img src="https://blog.demediterraning.com/wp-content/uploads/2011/12/Port-Aventura_PTDT.jpg" alt="<%= espectaculo.nombre %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px;">
-                        <% }  %>
-                    </div>
-                    <div>
                         <h2><%= espectaculo.nombre %></h2>
-                        <p><strong>Descripcion: </strong><%= espectaculo.descripcion %></p>
-                        <p><strong>Hora: </strong> <%= espectaculo.hora_inicio %></p>
-                        <p><strong>Duracion: </strong><%= espectaculo.duracion %><strong> min</strong></p>
-                        <p><strong>Ubicacion: </strong><%= espectaculo.ubicacion %></p>
+                        <p><strong>Descripción:</strong> <%= espectaculo.descripcion %></p>
+                        <p><strong>Hora de Inicio:</strong> <%= espectaculo.hora_inicio %></p>
+                        <p><strong>Duración:</strong> <%= espectaculo.duracion %> minutos</p>
+                        <p><strong>Ubicación:</strong> <%= espectaculo.ubicacion %></p>
+                        <div class="actions">
+                            <a href="/espectaculos/<%= espectaculo._id %>">Ver</a>
+                            <a href="/espectaculos/<%= espectaculo._id %>/edit">Editar</a>
+                            <a href="/espectaculos/<%= espectaculo._id %>/delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este espectáculo?');">Eliminar</a>
+                        </div>
                     </div>
                 </li>
-                <% }) %>
+            <% }) %>
         </ul>
+
+        <h2>Agregar un Nuevo Espectáculo</h2>
+        <form action="/espectaculos" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+
+            <label for="hora_inicio">Hora de Inicio:</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required>
+
+            <label for="duracion">Duración (minutos):</label>
+            <input type="number" id="duracion" name="duracion" required>
+
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" required>
+
+            <input type="submit" value="Agregar Espectáculo">
+        </form>
     </main>
 </body>
 

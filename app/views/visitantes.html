@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        h1, h2 {
             color: #ff5500;
             text-align: center;
         }
@@ -44,6 +44,18 @@
             margin-top: 10px;
             font-style: italic;
             color: #666;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .actions a {
+            margin-right: 10px;
+            color: #ff5500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .actions a:hover {
+            text-decoration: underline;
         }
         form {
             margin-top: 20px;
@@ -109,40 +121,48 @@
                             // Muestra la reseña en el HTML
                         %> <%= randomReseña %>
                     </div>
+                    <div class="actions">
+                        <a href="/visitantes/<%= visitante._id %>">Ver</a>
+                        <a href="/visitantes/<%= visitante._id %>/edit">Editar</a>
+                        <a href="/visitantes/<%= visitante._id %>/delete" onclick="return confirm('¿Estás seguro de que deseas eliminar a este visitante?');">Eliminar</a>
+                    </div>
                 </li>
             <% }) %>
         </ul>
     </div>
 
     <div class="container">
-        <h2>Formulario de Reseñas</h2>
-        <form action="C:\Users\PabloCantero\Desktop\proyecto base de datos\Trabajo-Bases-de-Datos\app\views\resenaFormulario.php" method="post">
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required><br>
-        
+        <h2>Agregar un Nuevo Visitante</h2>
+        <form action="/visitantes" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
             <label for="genero">Género:</label>
             <select id="genero" name="genero" required>
                 <option value="masculino">Masculino</option>
                 <option value="femenino">Femenino</option>
                 <option value="otro">Otro</option>
-            </select><br>
-        
+            </select>
+
             <label for="nacionalidad">Nacionalidad:</label>
-            <input type="text" id="nacionalidad" name="nacionalidad" required><br>
-        
+            <input type="text" id="nacionalidad" name="nacionalidad" required>
+
             <label for="tipo_documento">Tipo de Documento:</label>
-            <input type="text" id="tipo_documento" name="tipo_documento" required><br>
-        
-            <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento" required><br>
-        
+            <input type="text" id="tipo_documento" name="tipo_documento" required>
+
+            <label for="numero_documento">Número de Documento:</label>
+            <input type="text" id="numero_documento" name="numero_documento" required>
+
             <label for="fecha_registro">Fecha de Registro:</label>
-            <input type="date" id="fecha_registro" name="fecha_registro" required><br>
-        
-            <label for="resena">Reseña:</label>
-            <textarea id="resena" name="resena" rows="4" cols="50" required></textarea><br>
-        
-            <input type="submit" value="Enviar reseña">
+            <input type="date" id="fecha_registro" name="fecha_registro" required>
+
+            <input type="submit" value="Agregar Visitante">
         </form>
     </div>
 </body>
