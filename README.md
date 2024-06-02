@@ -19,6 +19,14 @@ El repositorio contiene los siguientes archivos:
 
 5. **`portaventura.js`**: Script JavaScript que implementa la funcionalidad de interacción con los datos en la página HTML.
 
+
+## Cómo subir la base de datos a localhost
+
+1. Clona el repositorio utilizando el comando git clone. Reemplaza <URL_DEL_REPOSITORIO> con la URL real del repositorio que deseas clonar.
+2. En el terminal, ejecuta el siguiente comando para importar los datos: node importData.
+3. En el terminal, ejecuta el siguiente comando para iniciar el servidor: npm start.
+4. Finalmente, para acceder a localhost escribes esto en tu navegador: http://localhost:3001
+
 ## Funcionalidades del Sistema
 
 El sistema de gestión de PortAventura ofrece las siguientes funcionalidades principales:
